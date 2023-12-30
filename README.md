@@ -8,7 +8,6 @@ To setting up the project, follow the steps below:
 # via HTTPS
 git clone https://github.com/notkaramel/musical-filters.git
 
-import IPython.display as ipd
 # via SSH
 git clone git@github.com:notkaramel/musical-filters.git
 ```
