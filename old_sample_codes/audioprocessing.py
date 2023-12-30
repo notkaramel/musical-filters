@@ -43,8 +43,7 @@ def remove_every_nth_sample(audio, sr:int, n:int):
     new_audio = np.array([new_audio_left, new_audio_right])
 
     # Compare the size of the original and new audio
-    print(f'Original size: {round(audio.size/1e6)} MB 
-          vs. New size: {round(new_audio.size/1e6)} MB')
+    print(f'Original size: {round(audio.size/1e6)} MB vs. New size: {round(new_audio.size/1e6)} MB')
     
     # New sampling rate = original sampling rate - number of samples removed
     # new_sr = sr - sr/n
