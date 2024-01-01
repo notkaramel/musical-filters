@@ -1,10 +1,5 @@
-# Import Libraries
-import os
-os.environ['LIBROSA_CACHE_DIR'] = '/tmp/librosa_cache'
 import librosa
 import numpy as np
-import matplotlib.pyplot as plt
-import librosa.display
 
 def waveshaping(audio_arr, function):
     audio_new = np.array(function(audio_arr))
