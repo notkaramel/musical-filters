@@ -144,8 +144,8 @@ if __name__ == '__main__':
     #gaussian blur using gaussian function
     test_arr_filt2 = cv.GaussianBlur(src=test_arr, ksize=(5,5), sigmaX=5)
 
-    #cv.imwrite('test_filt.bmp', test_arr_filt)
-    #cv.imwrite('test_filt2.bmp', test_arr_filt2)
+    #cv.imwrite('test_images/test_filt.bmp', test_arr_filt)
+    #cv.imwrite('test_images/test_filt2.bmp', test_arr_filt2)
 
 
 
