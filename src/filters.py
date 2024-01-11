@@ -1,25 +1,17 @@
 # Import Libraries
-import os
-os.environ['LIBROSA_CACHE_DIR'] = '/tmp/librosa_cache'
-import librosa
 import numpy as np
-import matplotlib.pyplot as plt
-import librosa.display
-import glob
 import cv2 as cv
 from math import pi, exp
 
-'''
-# Clear librosa cache
-librosa.cache.clear()
-
-audio, sr = [], []
-for file in glob.glob('audio_samples/*'):
-    audio_, sr_ = librosa.load(file, mono=False, sr=None)
-    audio.append(audio_)
-    sr.append(sr_)
-'''
-
+def imagify(arr):
+    '''
+    Normalizes the input audio (with values from -1 to 1) to have values between 0-255
+    Parameters
+        arr (2D np array): input audio
+    Returns
+        arr_norm (2D np array): normalized image
+    '''
+    return (arr + 1)*255/2
 
 #manual convolution
 def conv1D(arr, f):
@@ -71,6 +63,7 @@ def gauss2D(size, sigma):
             n = cst*exp(-((i-half_length)**2 + (j-half_length)**2)/(2*sigma**2))
             f[i, j] = n
             sum += n
+
     #normalize
     print(1/sum)
     f = 1/sum * f
@@ -90,9 +83,6 @@ if __name__ == '__main__':
     gauss = gauss2D(5, 5)
     print(gauss)
 
-    #np.random.seed(1)
-    #test_arr_rand = np.random.randint(0, 256, (256, 256), dtype=np.uint8)
-
     #test img for convolution testing
     test_arr = np.zeros((256, 256))
 
@@ -105,17 +95,16 @@ if __name__ == '__main__':
         test_arr[200, i] = 255
         test_arr[201, i] = 255
     
-    #g = [[1, 4, 7, 4, 1], [4, 20, 33, 20, 4], [7, 33, 55, 33, 7], [4, 20, 33, 20, 4], [1, 4, 7, 4, 1]] #Gaussian filter, sigma=1
-    #gauss = np.array(g)
-
     #gaussian blur using 2D conv function
     test_arr_filt = cv.filter2D(src=test_arr, ddepth=-1, kernel=gauss) #ddepth of -1 means same img depth as input img
 
     #gaussian blur using gaussian function
     test_arr_filt2 = cv.GaussianBlur(src=test_arr, ksize=(5,5), sigmaX=5)
 
-    cv.imwrite('test_filt.bmp', test_arr_filt)
-    cv.imwrite('test_filt2.bmp', test_arr_filt2)
+    #cv.imwrite('test_filt.bmp', test_arr_filt)
+    #cv.imwrite('test_filt2.bmp', test_arr_filt2)
+
+
 
 
     
