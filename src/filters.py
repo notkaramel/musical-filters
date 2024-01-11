@@ -1,17 +1,28 @@
 # Import Libraries
 import numpy as np
 import cv2 as cv
-from math import pi, exp
+from math import pi, exp, sqrt
 
-def imagify(arr):
+#image to audio conversion
+def audio2img(arr):
     '''
-    Normalizes the input audio (with values from -1 to 1) to have values between 0-255
+    Scales the input audio (with values from -1 to 1) to have values between 0-255
     Parameters
         arr (2D np array): input audio
     Returns
         arr_norm (2D np array): normalized image
     '''
     return (arr + 1)*255/2
+
+def img2audio(arr):
+    '''
+    Scales the input img (with values from 0 to 255) to have values between -1 to 1
+    Parameters
+        arr (2D np array): input img
+    Returns
+        arr_norm (2D np array): scaled audio
+    '''
+    return arr*(2/255)-1
 
 #manual convolution
 def conv1D(arr, f):
@@ -44,6 +55,29 @@ def conv1D(arr, f):
 
     return arr_filtered
 
+def gauss1D(size, sigma):
+    '''
+    Parameters
+        size (size): size of filter
+        sigma (float): standard deviation
+    Returns
+        f (1D np array): Gaussian filter
+    '''
+    f = np.zeros(size)
+    cst = 1/(sqrt(2*pi)*sigma)
+    half_length = int(size/2)
+    sum = 0
+
+    for i in range(size):
+        n = cst*exp(-((i-half_length)**2)/(2*sigma**2))
+        f[i] = n
+        sum += n
+
+    #normalize
+    f = 1/sum * f
+
+    return f
+
 #manual Gaussian filter
 def gauss2D(size, sigma):
     '''
@@ -65,7 +99,6 @@ def gauss2D(size, sigma):
             sum += n
 
     #normalize
-    print(1/sum)
     f = 1/sum * f
 
     return f
@@ -82,6 +115,16 @@ if __name__ == '__main__':
     #testing manual gaussian function
     gauss = gauss2D(5, 5)
     print(gauss)
+
+    gauss1 = gauss1D(5, 1)
+    print(gauss1)
+
+    #testing audio to img conversion
+    img = np.array([0, 255, 127.5])
+    print(img2audio(img))
+
+    audio = np.array([-1, 1, 0])
+    print(audio2img(audio))
 
     #test img for convolution testing
     test_arr = np.zeros((256, 256))
