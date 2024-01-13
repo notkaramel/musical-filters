@@ -30,4 +30,4 @@ if __name__ == '__main__':
     # you can change this to any audio file you want
     file = 'audio_files/Im-lost-in-space-jan6.wav'
     audio_arr, sr = loadAudioFile(file)
-    export2wav('test_export.flac', audio_arr, sr)
+    exportAudioFile('test_export.flac', audio_arr, sr)
