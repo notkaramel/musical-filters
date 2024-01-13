@@ -34,6 +34,7 @@ pip install -r requirements.txt
 ```
 
 # Documentation
+- Soundfile: https://python-soundfile.readthedocs.io/en/0.11.0/
 - OpenCV: https://docs.opencv.org/4.9.0/d4/d13/tutorial_py_filtering.html 
 - Librosa: https://librosa.org/doc/latest/index.html
 
