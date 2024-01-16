@@ -27,7 +27,7 @@ python3 -m venv .venv
 # Linux
 source .venv/bin/activate
 # Windows (Powershell)
-.venv/Scripts/activate.psl
+.venv/Scripts/activate.ps1
 ```
 
 5. Install the dependencies
