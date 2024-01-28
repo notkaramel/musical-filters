@@ -2,33 +2,6 @@
 > Citation: Improved upon @notkaramel's guide in January 2023 during [ECSE 223](https://github.com/notkaramel/ECSE223-SnowShoeTours) and [ECSE 321 - Developer Guide](https://github.com/notkaramel/ECSE321-Mar1HotelSystem/wiki/0.-Developer-Guide#2-git-branches)
 
 
-## Command-line nagivation basics
-
-### File navigation
-- Usually your current folder will be shown on the same line to the left (or a line above) of your cursor. Else, you can check with
-```sh
-pwd
-```
-
-- To list all files & folders in your current location, use `ls`. Other flags might apply such as:
-```sh
-ls	# to list all files & folders
-ls -a	# to list all files & folders (includes hidden ones)
-ls -l 	# to list files and folders with their permission on your machine.
-```
-
-- To change directory, use `cd`. Examples:
-```sh
-cd Desktop/ecse223-project	# To access ecse223-project that you put on the Desktop
-cd ..		# To go to the parent folder of your current location
-cd		# To go to your home folder (Linux & MacOS tested, not sure how Windows would work)
-```
-
-- Check if prerequisite programs available on your machine:
-```sh
-git -v
-python --version
-```
 ## Git basics
 ### Common commands for Git
 
@@ -98,5 +71,41 @@ git merge <your-reference-branch>
 
 > There are more to merging branches than this (`fast-forward`, `rebase`, `squash`, etc.). Here's a link to a [very good guide](https://www.atlassian.com/git/tutorials/using-branches/git-merge) IMO, but feel free to experiment with other git functionalities.
 
+## GitHub basics
+### Pull Request
+- Once your feature is done, you can create a Pull Request (PR) on GitHub. The PR should describe what you have done, i.e., what feature you have implemented, what bugs you have fixed, how did you test, etc. 
+- The PR should be reviewed by at least one other person before merging to the `main` branch.
 
+### Issues
+- The issues tab is where you can create a new issue, or check the status of an existing issue.
+- An issue can be a bug, a feature request, or a work item. It can be used as a to-do/checklist for the project.
+- It should be assigned to at least one person.
+- Once resolved, the issue should be closed.
 
+## Command-line nagivation basics
+
+### File navigation
+- Usually your current folder will be shown on the same line to the left (or a line above) of your cursor. Else, you can check with
+```sh
+pwd
+```
+
+- To list all files & folders in your current location, use `ls`. Other flags might apply such as:
+```sh
+ls	# to list all files & folders
+ls -a	# to list all files & folders (includes hidden ones)
+ls -l 	# to list files and folders with their permission on your machine.
+```
+
+- To change directory, use `cd`. Examples:
+```sh
+cd Desktop/ecse223-project	# To access ecse223-project that you put on the Desktop
+cd ..		# To go to the parent folder of your current location
+cd		# To go to your home folder (Linux & MacOS tested, not sure how Windows would work)
+```
+
+- Check if prerequisite programs available on your machine:
+```sh
+git -v
+python --version
+```
