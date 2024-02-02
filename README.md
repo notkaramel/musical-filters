@@ -1,6 +1,12 @@
 # musical-filters
 Imagine applying photo filters to music :notes:
 
+## General idea
+- Apply graphic filters to music
+- Have fun :smile:
+
+[![](https://mermaid.ink/img/pako:eNqVUcFqwzAM_RXj42h72DGHQWEtBLpmbOllSQ-iVtaAYxtPZgtp_n2OvRD3OJ2kx-M9PWngFy2QZ7yR-vtyBUvs8FYr5is_vp7KautEq1nTSjxHOAC5quI0FQQKWAv9Aj4-HJkymwQ9J7JsvX665cVGahBBcO8NbrM2u3OauGyfH8rd32KxH4bFbGuM7KclCe2CjmPKDzJBsnCUGPgpyaIdGUf_jDTrzKnwx2hLSa7iVPrQkRz7ahc4KNjdgfmKd2g7aIV_SQhYc7pihzXPfCuwASep5rUaPRUc6fdeXXhG1uGKOyOA8LmFTwsdzxqQXx41oD60XmYULWn7Et8evj_-Avt2oOc?type=png)](https://mermaid.live/edit#pako:eNqVUcFqwzAM_RXj42h72DGHQWEtBLpmbOllSQ-iVtaAYxtPZgtp_n2OvRD3OJ2kx-M9PWngFy2QZ7yR-vtyBUvs8FYr5is_vp7KautEq1nTSjxHOAC5quI0FQQKWAv9Aj4-HJkymwQ9J7JsvX665cVGahBBcO8NbrM2u3OauGyfH8rd32KxH4bFbGuM7KclCe2CjmPKDzJBsnCUGPgpyaIdGUf_jDTrzKnwx2hLSa7iVPrQkRz7ahc4KNjdgfmKd2g7aIV_SQhYc7pihzXPfCuwASep5rUaPRUc6fdeXXhG1uGKOyOA8LmFTwsdzxqQXx41oD60XmYULWn7Et8evj_-Avt2oOc)
+
 ## Setup
 To setting up the project, follow the steps below:
 1. Clone the repository
